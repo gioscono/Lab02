@@ -67,7 +67,7 @@ public class AlienController {
     		if(parolaAliena.matches("[a-zA-Z]+")){
     			parolaAliena = parolaAliena.toLowerCase();
     			String res = al.translateWord(parolaAliena);
-    			txtResult.appendText("La traduzione e': "+res+"\n");
+    			txtResult.appendText("La traduzione e':\n"+res+"\n");
     		}
     		else{
     			txtResult.appendText("Attenzione, non possono essere insiriti numeri!!\n");
