@@ -13,8 +13,10 @@ public class WordEnhanced {
 		listaTraduzioni.add(translation);
 	}
 
-	public String compare(String alienWord){
-		return null;
+	public boolean compare(String alienWord){
+		if(this.alienWord.matches(alienWord))
+			return true;
+		return false;
 		
 	}
 

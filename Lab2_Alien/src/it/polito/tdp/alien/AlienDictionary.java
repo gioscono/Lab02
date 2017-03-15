@@ -34,7 +34,6 @@ public class AlienDictionary {
 					ris += traduz+"\n";
 				}
 			return ris;
-			
 			}
 		}
 		return null;

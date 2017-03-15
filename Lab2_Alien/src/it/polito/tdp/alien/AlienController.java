@@ -91,25 +91,17 @@ public class AlienController {
     @FXML
     void doCerca(ActionEvent event) {
     	String ricerca = txtCerca.getText().toLowerCase();
-    	String[] part = ricerca.split("\\?");
-    	String parte1 = part[0];
-    	String parte2 = part[1];
+    	ricerca = ricerca.replaceAll("\\?",".");
     	
-    	int i = ricerca.indexOf("?");
-    
-    	char[] lettere ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',};
-    	LinkedList<String> parolePossibili = new LinkedList<String>();
-    	for(int j = 0 ; j<lettere.length; j++){
-    		String daCercare=parte1+lettere[j]+parte2;
-    		for(WordEnhanced parola : al.listaWords){
-    			if(parola.getAlienWord().compareTo(daCercare)==0 ){
-    				txtResult.appendText("La parola cercata "+parola.getAlienWord()+"\nLe sue traduzioni sono:\n");
-    				for(String s : parola.getListaTraduzioni()){
-    					txtResult.appendText(s+"\n");
-    				}
+    	for(WordEnhanced we : al.listaWords){
+    		if(we.compare(ricerca)){
+    			for(String s : we.getListaTraduzioni()){
+    				txtResult.appendText(s+"\n");
     			}
     		}
+    			
     	}
+    	txtCerca.clear();
     }
     
 }
